@@ -1,0 +1,117 @@
+.length
+The .length method tallies the number of elements in your array and returns the count:
+
+.first
+The .first method accesses the first element of the array, the element at index 0:
+
+.last
+The .last method accesses the last element of the array:
+
+.take
+The .take method returns the first n elements of the array:
+
+.drop
+The .drop method returns the elements after n elements of the array:
+
+.pop
+The .pop method will permantently remove the last element of an array:
+
+.shift
+The .shift method will permantently remove the first element of an array and return this element:
+
+.push
+The .push method will allow you to add an element to the end of an array:
+
+.unshift
+The .unshift method will allow you to add an element to the beginning of an array:
+
+.delete
+The .delete method removes a specified element from an array permanently:
+
+.delete_at
+The .delete_at method allows you to permanently remove an element of an array at a specified index:
+
+.reverse
+The .reverse method reverses the array but does not mutate it (the original array stays as is):
+
+.select
+The .select method iterates over an array and returns a new array that includes any items that return true to the expression provided.
+
+.include?
+The include? method checks to see if the argument given is included in the array: 
+
+.join
+The .join method returns a string of all the elements of the array separated by a separator parameter. If the separator parameter is nil, the method uses an empty string as a separator between strings. 
+
+.map
+The .map method is the same as the .collect method. The .map and .collect methods iterate over each element of the array, allowing you to perform actions on them. The .map and .collect methods differ from the .each method in that they return an array containing the transformed elements.
+
+.select/.delete/.delete_if
+arr = [1, 2, 3, 4, 5, 6]
+arr.select {|a| a > 3}       #=> [4, 5, 6]
+arr.reject {|a| a < 3}       #=> [3, 4, 5, 6]
+arr.drop_while {|a| a < 4}   #=> [4, 5, 6]
+arr                          #=> [1, 2, 3, 4, 5, 6]
+arr.delete_if {|a| a < 4}   #=> [4, 5, 6]
+arr                         #=> [4, 5, 6]
+arr = [1, 2, 3, 4, 5, 6]
+arr.keep_if {|a| a < 4}   #=> [1, 2, 3]
+arr                       #=> [1, 2, 3]
+
+.bsearch
+bsearch {|x| block }
+By using binary search, finds a value from this array which meets the given condition in O(log n) where n is the size of the array. it will return only one value 
+
+.clear 
+clear → ary
+Removes all elements from self. 
+
+.combination 
+combination(n) {|c| block} → ary
+When invoked with a block, yields all combinations of length n of elements from the array and then returns the array itself.
+
+.compact
+compact → new_ary
+Returns a copy of self with all nil elements removed. 
+
+.count
+count → int
+count(obj) → int
+count {|item| block} → int
+count elements in the array
+ary = [1, 2, 4, 2]
+ary.count                  #=> 4
+ary.count(2)               #=> 2
+ary.count {|x| x%2 == 0}   #=> 3
+
+.delete
+delete(obj) → item or nilclick to toggle source
+delete(obj) {block} → item or result of block
+Deletes all items from self that are equal to obj.
+a = [ "a", "b", "b", "b", "c" ]
+a.delete("b")                   #=> "b"
+a                               #=> ["a", "c"]
+delete_at(index) → obj or nil    delete at specific index 
+
+.fetch
+fetch(index) → objclick to toggle source
+fetch(index, default) → obj
+fetch(index) {|index| block} → obj
+flatten → new_aryclick to toggle source
+flatten(level) → new_ary
+Returns a new array that is a one-dimensional flattening of self (recursively).
+
+.include()
+include?(object) → true or false 
+
+.insert()
+insert the elemet at the given position
+insert(index, obj...) → aryclick to toggle source
+Inserts the given values before the element with the given index.
+
+.to_s
+converting array to string 
+
+.intersection
+intersection(other_ary1, other_ary2, ...) → new_ary
+Set Intersection — Returns a new array containing unique elements common to self and other_arys. Order is preserved from the original array.
